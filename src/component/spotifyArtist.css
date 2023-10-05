@@ -1,0 +1,48 @@
+/* Container for the grid */
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Create four equally sized columns */
+    gap: 40px; /* Gap between grid items */
+    margin: 50px;
+    justify-items: center; /* Center items horizontally in each cell */
+  }
+  
+  /* Individual box styles */
+  .box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  /* Image styles */
+  .image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  /* Name styles */
+  .name {
+    margin-bottom: 5px;
+  }
+  
+  /* Followers styles */
+  .followers {
+    font-size: 14px;
+    color: #C4C4C4;
+  }
+  
+  /* Star rating styles */
+  .rating {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .star {
+    color: #C4C4C4;
+    font-size: 18px;
+  }
+  

@@ -68,5 +68,3 @@ npm start
 The application will be available at http://localhost:3000 in your web browser.
 
 Feel free to explore the various components and functionalities of the application.
-
-This addition to the `README.md` provides a clear list of dependencies and their versions used in this project.

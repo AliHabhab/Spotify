@@ -5,10 +5,11 @@ import { faSpotify } from "@fortawesome/free-brands-svg-icons";
 import "../css/login.css";
 
 const Login = () => {
+  const appId = process.env.REACT_APP_SPOTIFY_ID;
   let state = "nUdjLheEw6VsxUgb";
 
   const authorizationRedirect = () => {
-    window.location.href = `https://accounts.spotify.com/authorize?client_id=ff6fd228fc8c46afba0e6979d3877c8a&response_type=token&redirect_uri=http://localhost:3000/search&state=${state}`;
+    window.location.href = `https://accounts.spotify.com/authorize?client_id=${appId}&response_type=token&redirect_uri=http://localhost:3000/search&state=${state}`;
   };
 
   return (

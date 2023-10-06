@@ -59,6 +59,8 @@ Please ensure that you have these dependencies installed before running the appl
 
 Before running the application, you'll need to set up the necessary environment variables for authentication with the Spotify API. Follow the instructions in the "Environment Setup" section of this README to configure your credentials
 
+To create a Spotify application, visit the following link: https://developer.spotify.com/dashboard. After creating the application, obtain the App ID and set it in the .env file.
+
 ## Usage
 
 To start the development server and run the application, use the following command:
@@ -66,5 +68,7 @@ To start the development server and run the application, use the following comma
 npm start
 
 The application will be available at http://localhost:3000 in your web browser.
+
+---
 
 Feel free to explore the various components and functionalities of the application.

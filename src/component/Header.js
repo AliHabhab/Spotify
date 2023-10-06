@@ -5,13 +5,14 @@ const Header = () => {
     <header
       style={{
         backgroundColor: "#CDCDCD",
-        padding: "1px",
+        padding: "5px",
         margin: "0",
+        borderBottom: "1px solid #000",
       }}
     >
       <h1
         style={{
-          fontSize: "12px",
+          fontSize: "15px",
           marginLeft: "30px",
         }}
       >

@@ -1,0 +1,90 @@
+.artistNameHeader {
+  padding-top: 20px;
+  padding-left: 50px;
+  font-weight: 500;
+}
+
+.artistAlbumsHeader {
+  padding-left: 50px;
+  margin-top: -15px;
+  font-weight: 100;
+}
+
+/* Container for all albums using CSS Grid */
+.album-container {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Create 4 equal columns in each row */
+  gap: 20px;
+}
+
+/* Individual album */
+.album {
+  padding: 20px; /* Adjust padding as needed for spacing */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 250px;
+  margin-left: 40px;
+  border: 1px solid #000;
+}
+
+/* Image within the album */
+.album-image img {
+  flex: 1;
+  margin-left: 1px;
+  background-size: contain; /* Change to 'contain' to fit the image within the container */
+  background-repeat: no-repeat;
+  background-position: center center; /* Center the background image both horizontally and vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%; /* Set a fixed width for the image */
+  height: auto; /* Allow the height to adjust automatically */
+  border-bottom: 1px solid #000;
+}
+
+/* Album details section */
+.album-details {
+  flex: 1;
+  padding-left: 15px;;
+}
+
+.album-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.artist-name {
+  font-size: small;
+  margin-bottom: 5px;
+  color: #777777; /* Adjust text color */
+}
+
+.album-date {
+  font-size: 12px; /* Adjust font size for date */
+  color: #C4C4C4;
+  margin-bottom: 5px;
+}
+
+.track-info {
+  font-size: 12px; /* Adjust font size for track info */
+  color: #C4C4C4;
+  margin-bottom: 15px;
+}
+
+.spotify-preview {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #F7F7F7;
+  color: #555555; /* Adjust text color */
+  text-align: center;
+  padding: 5px 10px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px; /* Adjust font size for the button */
+  font-weight: 400; /* Adjust font weight for the button */
+  border-top: 1px solid #898989;
+}

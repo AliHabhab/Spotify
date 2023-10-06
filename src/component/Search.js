@@ -1,8 +1,9 @@
 import { useState } from "react";
+import SpotifyArtist from "./SpotifyArtist";
 import axios from "axios";
-import Header from "./Header";
-import Card from "./Card";
-import "./search.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import "../css/search.css";
 
 function Search() {
   const [name, setName] = useState("");
@@ -31,7 +32,6 @@ function Search() {
         )}&type=artist&access_token=${accessToken.access_token}`,
         {
           headers: {
-            Authorization: `Bearer ${accessToken.access_token}`,
             Accept: "application/json",
           },
         }
@@ -40,6 +40,8 @@ function Search() {
       if (!response.data || !response.data.artists) {
         throw new Error("No artists found.");
       }
+
+      window.localStorage.setItem("access_token", accessToken.access_token);
 
       setData(response.data);
     } catch (err) {
@@ -51,27 +53,34 @@ function Search() {
 
   return (
     <>
-      <Header />
       <div>
-        {err && <h2>{err}</h2>}
-        <div className="search-container">
-          <input
-            className="search-container input"
-            value={name}
-            onChange={(event) => setName(event.target.value)}
-            placeholder="Search for an artist..."
-          />
-          <button className="search-container button" onClick={handleClick}>
-            Search
-          </button>
+        {err && <h2 className="error-message">{err}</h2>}
+        <div className={"search-container search-container-center"}>
+          <div className="search-field">
+            <div className="search-input-container">
+              <input
+                className="input"
+                value={name}
+                onChange={(event) => setName(event.target.value)}
+                placeholder="Search for an artist..."
+              />
+              <button className="button" onClick={handleClick}>
+                <FontAwesomeIcon
+                  icon={faSearch}
+                  size="1x"
+                  style={{ color: "#c4c4c4" }}
+                />
+              </button>
+            </div>
+          </div>
         </div>
 
         {isLoading ? (
-          <h2>Loading...</h2>
+          <h2 className="loading-message">Loading...</h2>
         ) : (
-          <div>
+          <div className="container">
             {data.artists.items.map((artist) => (
-              <Card key={artist.id} artist={artist} />
+              <SpotifyArtist key={artist.id} artist={artist} />
             ))}
           </div>
         )}

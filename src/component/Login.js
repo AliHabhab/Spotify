@@ -1,5 +1,8 @@
 import React from "react";
-import Header from "../component/Header";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpotify } from "@fortawesome/free-brands-svg-icons";
+
+import "../css/login.css";
 
 const Login = () => {
   let state = "nUdjLheEw6VsxUgb";
@@ -10,8 +13,21 @@ const Login = () => {
 
   return (
     <>
-      <Header />
-      <button onClick={authorizationRedirect}>Login</button>
+      <div className="login-container">
+        <button
+          className="login-container button"
+          onClick={authorizationRedirect}
+        >
+          Login
+          <div className="spotifyLogo-container">
+            <FontAwesomeIcon
+              className="spotifyLogo"
+              icon={faSpotify}
+              style={{ color: "#1ed760", display: "block" }}
+            />
+          </div>
+        </button>
+      </div>
     </>
   );
 };

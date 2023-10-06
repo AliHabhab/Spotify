@@ -1,22 +1,36 @@
 import React from "react";
 
-import "./spotifyArtist.css";
+import { Link } from "react-router-dom";
+import "../css/spotifyArtist.css";
 
-function SpotifyArtist({ imageSrc, name, followers, rating }) {
+const SpotifyArtist = ({ artist }) => {
+  const imageSrc = artist.images && artist.images[0] && artist.images[0].url;
+
   return (
-    <div className="box">
-      <img src={imageSrc} alt="Album Cover" className="image" />
-      <div className="name">{name}</div>
-      <div className="followers">Followers: {followers}</div>
-      <div className="rating">
-        {Array.from({ length: rating }, (_, index) => (
-          <div key={index} className="star">
-            ★
+    <>
+      <Link to={`/artist/${artist.id}`} className="link">
+        <div className={`box ${!imageSrc ? "no-image" : ""}`}>
+          <div
+            className="image"
+            style={{
+              backgroundImage: `url(${imageSrc})`,
+            }}
+          ></div>
+          <div className="info">
+            <div className="name">{artist.name}</div>
+            <div className="followers">Followers: {artist.followers.total}</div>
+            <div className="rating">
+              {Array.from({ length: artist.popularity / 20 }, (_, index) => (
+                <div key={index} className="star">
+                  ★
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
-    </div>
+        </div>
+      </Link>
+    </>
   );
-}
+};
 
 export default SpotifyArtist;

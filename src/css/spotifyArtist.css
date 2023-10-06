@@ -1,0 +1,92 @@
+/* Container for the grid */
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Create 4 equal columns */
+  gap: 20px; /* Add spacing between and below boxes */
+  margin: 70px -10px; /* Add negative margin to offset spacing */
+  padding-left: 100px;
+  padding-right: 100px;
+  
+}
+
+/* Individual box styles */
+.box {
+  height: 250px; /* Set a fixed height for the box */
+  width: 150px;
+  border: 1px solid #ccc;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #C4C4C4;
+  margin-right: 80px;
+}
+
+/* Image styles */
+.image {
+  flex: 1;
+  margin-left: 1px;
+  background-size: contain; /* Change to 'contain' to fit the image within the container */
+  background-repeat: no-repeat;
+  background-position: center center; /* Center the background image both horizontally and vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%; /* Set a fixed width for the image */
+  height: auto; /* Allow the height to adjust automatically */
+  border-bottom: 1px solid #C4C4C4;
+}
+
+/* Styles for boxes without images */
+.box.no-image .image {
+  background-color: #ccc;
+}
+
+/* Info container styles */
+.info {
+  padding: 16px;
+}
+
+/* Name styles */
+.name {
+  font-size:medium;
+  color: #000;
+  margin-bottom: 5px;
+}
+
+/* Followers styles */
+.followers {
+  font-size: 10px;
+  color: #C4C4C4;
+}
+
+/* Star rating styles */
+.rating {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.star {
+  position: relative;
+  color: #C4C4C4;
+  font-size: 18px;
+  right: 50px;
+}
+
+.link {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for smaller screens */
+  }
+}
+
+/* Media query for even smaller screens */
+@media (max-width: 480px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for even smaller screens */
+  }
+}

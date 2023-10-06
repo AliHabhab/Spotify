@@ -1,0 +1,44 @@
+/* Updated CSS for the login container */
+.login-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 125px; /* Adjust the margin-top to move the button down */
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Adjust the button's style */
+  .login-container button {
+    background-color: #FFFFFFFF;
+    color: #000;
+    border: 2px solid #C4C4C4;
+    padding: 10px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center;
+    gap: 10px; /* Add some spacing between text and logo */
+    max-width: 350px; /* Set a maximum width for the button */
+    border-radius: 5px; /* Add rounded corners to the button */
+    margin-right: 20px; /* Move the button a little to the right */
+  }
+  
+  /* Center the Login text within the button */
+  .login-container button span {
+    text-align: center;
+  }
+
+  .spotifyLogo-container {
+    margin-left: -10px; /* Adjust this margin as needed */
+  }
+
+  /* Center the Spotify logo */
+  .spotifyLogo {
+    font-size: xx-large;
+    color: #1ed760;
+    position: relative;
+    right: -115px;
+  }
